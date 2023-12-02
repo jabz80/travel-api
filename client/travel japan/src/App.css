@@ -1,0 +1,100 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* navigation styling */
+
+.header {
+    display: flex;
+    color: rgb(83, 81, 81);
+    justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.5rem 1rem;
+}
+
+.navlink {
+    text-decoration: none;
+    color: rgb(83, 81, 81);
+    padding: 1rem;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.navlink:hover {
+    color: rgb(214, 25, 25);
+    text-decoration: underline;
+}
+
+.logo {
+    height: 90px;
+    width: 100px;
+}
+
+
+/* home page styling */
+
+.jumbotron {
+    height: 50vh; 
+    display: flex;
+    align-items: center;
+  }
+
+  .home-text {
+    font-size: 1.25rem;
+  }
+
+
+/* location page styling */
+
+.card .img-fit {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+/* makes all cards the same size */
+.card {
+    height: 100%;
+    transition: all 0.4s;
+    margin-bottom: 30px;
+}
+
+/* align all card buttons to the bottom of the body */
+.card-body {
+    display: flex;
+    height: 300px;
+    flex-direction: column;
+}
+
+/* need this to align buttons inside card to align to bottom with paragraph */
+.card-text {
+    flex-grow: 1;
+}
+
+.card:hover {
+    transform: scale(1.08);
+}
+
+
+/* footer styling */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(90, 87, 87);
+    color: #fff;
+    width: 100vw;
+}
