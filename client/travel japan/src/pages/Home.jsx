@@ -6,7 +6,7 @@ export default function Home() {
     backgroundImage: `url(${banner})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    color: 'white', // set text color based on image
+    color: 'white', 
   };
 
   return (
