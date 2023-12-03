@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS japan;
+DROP TABLE IF EXISTS users;
 
 
 CREATE TABLE japan (
@@ -21,3 +22,18 @@ VALUES
 ('Fujiyoshida', 'Fujiyoshida is a city located in Yamanashi Prefecture, Japan. As of 1 May 2019, the city had an estimated population of 48,782 in 19,806 households and a population density of 400 persons per km2', 'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'https://en.wikipedia.org/wiki/Fujiyoshida'),
 ('Osaka Castle', 'Osaka Castle is a Japanese castle in Chūō-ku Osaka Japan. The castle is one of Japans most famous landmarks and it played a major role in the unification of Japan during the sixteenth century of the Azuchi-Momoyama period.', 'https://images.unsplash.com/photo-1525316166484-aeef34af3ec3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'https://en.wikipedia.org/wiki/Osaka_Castle');
 
+CREATE TABLE users (
+    user_id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(500) NOT NULL,
+    email VARCHAR(500) UNIQUE NOT NULL,
+    password VARCHAR(500) NOT NULL,
+    PRIMARY KEY (user_id)
+);
+
+CREATE TABLE token (
+    token_id INT GENERATED ALWAYS AS IDENTITY,
+    user_id INT NOT NULL,
+    token CHAR(36) UNIQUE NOT NULL,
+    PRIMARY KEY (token_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);

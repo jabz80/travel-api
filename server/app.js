@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const placesRouter = require("./routes/japan")
+const userRouter = require('./routes/users');
 
 const app = express()
 
@@ -14,6 +15,7 @@ const logger = (req, res, next) => {
   app.use(logger);
 
   app.use("/japan", placesRouter);
+  app.use("/users", userRouter);
 
 
 module.exports = app;
